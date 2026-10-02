@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VSK Dev | Sites e ferramentas para empresas</title>
+<meta name="description" content="A VSK Dev cria sites, lojas virtuais, sistemas, automações e assistentes de IA sob medida para empresas, do briefing à manutenção.">
+<meta name="theme-color" content="#0d1224">
+<link rel="canonical" href="https://dev.vskgroup.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="VSK Dev">
+<meta property="og:title" content="VSK Dev | Sites e ferramentas para empresas">
+<meta property="og:description" content="Sites, lojas virtuais, ferramentas e automações sob medida para empresas.">
+<meta property="og:url" content="https://dev.vskgroup.com.br/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d1224'/%3E%3Cpath d='M17 17l15 25 15-25' fill='none' stroke='%23f4f0e8' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='52' r='3.6' fill='%238a5cf5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@400;500;700;800&display=swap">
+<style>
+/* ===== Tokens VSK Dev ===== */
+:root{
+  --bg:#f4f0e8;--surface:#ffffff;--fg:#0d1224;--muted:#5d6580;--line:#e1dccf;
+  --accent:#8a5cf5;--accent-hover:#a583f8;--accent-text:#6a3fd9;--on-accent:#0d1224;
+  --danger:#b3203f;
+  --term-bg:#0d1224;--term-fg:#f4f0e8;--term-muted:#a3a9c2;--term-line:rgba(244,240,232,.14);--term-accent:#a583f8;
+  --show-logo-light:block;--show-logo-dark:none;
+  --ff-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ff-logo:"Bricolage Grotesque",system-ui,sans-serif;
+  --r-lg:16px;--r-sm:10px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1224;--surface:#141932;--fg:#f4f0e8;--muted:#a3a9c2;--line:rgba(244,240,232,.14);
+    --accent-text:#a583f8;--danger:#ff8da1;--term-bg:#090c1b;
+    --show-logo-light:none;--show-logo-dark:block;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1224;--surface:#141932;--fg:#f4f0e8;--muted:#a3a9c2;--line:rgba(244,240,232,.14);
+  --accent-text:#a583f8;--danger:#ff8da1;--term-bg:#090c1b;
+  --show-logo-light:none;--show-logo-dark:block;color-scheme:dark;
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* ===== Base ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 14.5px/1.65 var(--ff-mono);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,pre,figure{margin:0}
+h1,h2,h3{font-weight:800;letter-spacing:-.04em;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--accent);color:var(--on-accent);padding:10px 14px;border-radius:var(--r-sm);font-weight:700;z-index:100}
+.skip:focus{left:12px}
+.ps{color:var(--accent-text);margin-right:.5ch}
+section{scroll-margin-top:76px}
+.sec{padding-block:clamp(64px,8vw,104px)}
+.sec h2{font-size:clamp(1.35rem,3.4vw,2rem)}
+.sec .intro{color:var(--muted);max-width:60ch;margin-top:12px}
+
+/* ===== Botões ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font:700 15px/1 var(--ff-mono);padding:14px 20px;border-radius:var(--r-sm);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .25s var(--ease),background-color .2s,border-color .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent)}
+.btn-sm{font-size:14px;padding:11px 16px}
+.btn[disabled]{opacity:.5;cursor:default}
+
+/* ===== Logotipo ===== */
+.lock{display:flex;align-items:center;gap:11px;font-family:var(--ff-logo);text-decoration:none;color:var(--fg)}
+.lock .lg{width:42px;height:42px;flex:none}
+.lg-l{display:var(--show-logo-light)}
+.lg-d{display:var(--show-logo-dark)}
+.lock b{display:block;font-weight:800;font-size:28px;line-height:1;letter-spacing:-.04em}
+.lock small{display:block;font-family:var(--ff-mono);font-weight:700;font-size:10px;letter-spacing:.24em;margin-top:4px}
+
+/* ===== Cabeçalho ===== */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 84%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.links{display:flex;gap:26px}
+.links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;transition:color .2s}
+.links a:hover{color:var(--fg)}
+.nav-act{display:flex;align-items:center;gap:10px}
+.tbtn{font:500 13px/1 var(--ff-mono);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;cursor:pointer;transition:color .2s,border-color .2s}
+.tbtn:hover{color:var(--fg);border-color:var(--accent)}
+
+/* ===== Hero ===== */
+.hero{padding:clamp(36px,6vw,72px) 0 clamp(56px,7vw,88px)}
+.hero h1{font-size:clamp(1.7rem,4.1vw,2.7rem);letter-spacing:-.05em;line-height:1.1;margin-bottom:20px}
+.caret{color:var(--accent-text);font-weight:800}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.lead{color:var(--muted);font-size:15.5px;max-width:40ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.note{color:var(--muted);font-size:13px;margin-top:22px;max-width:44ch}
+
+/* ===== Terminal ===== */
+.term{background:var(--term-bg);color:var(--term-fg);border:1px solid var(--term-line);border-radius:var(--r-lg);overflow:hidden;font-size:13px;line-height:1.6;min-width:0}
+.term-bar{padding:10px 16px;border-bottom:1px solid var(--term-line);color:var(--term-muted);font-size:12px}
+.term-body{padding:16px;height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;overscroll-behavior:contain}
+.term-body .cmd::before{content:"$ ";color:var(--term-accent);font-weight:700}
+.term-body .out{color:var(--term-muted)}
+.term-body .ok{color:var(--term-accent)}
+.term-body b{color:var(--term-fg)}
+.term-body a{color:var(--term-accent);text-underline-offset:3px}
+.term-in{display:flex;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid var(--term-line)}
+.term-in:focus-within{box-shadow:inset 0 0 0 1px var(--term-accent)}
+.term-in label{color:var(--term-accent);font-weight:700}
+.term-in input{flex:1;min-width:0;background:transparent;border:0;color:var(--term-fg);font:inherit;outline:0;caret-color:var(--term-accent);padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 16px}
+.chips button{font:500 12px/1 var(--ff-mono);color:var(--term-fg);background:transparent;border:1px solid var(--term-line);border-radius:var(--r-sm);padding:9px 11px;cursor:pointer;transition:border-color .2s,transform .25s var(--ease)}
+.chips button:hover{border-color:var(--term-accent)}
+.chips button:active{transform:scale(.97)}
+.chips button:focus-visible,.term-body:focus-visible{outline-color:var(--term-accent)}
+
+/* ===== Catálogo de serviços ===== */
+.cat{display:grid;grid-template-columns:230px 1fr;gap:28px;margin-top:36px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:4px}
+.tab{font:500 14px/1.3 var(--ff-mono);text-align:left;background:transparent;border:1px solid transparent;color:var(--muted);padding:11px 12px;border-radius:var(--r-sm);cursor:pointer;display:flex;gap:8px;transition:color .2s,background-color .2s,border-color .2s;white-space:nowrap}
+.tab::before{content:" ";white-space:pre;width:1ch;color:var(--accent-text);font-weight:800}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--fg);background:var(--surface);border-color:var(--line);font-weight:700}
+.tab[aria-selected="true"]::before{content:">"}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,3vw,32px);min-width:0}
+.panel[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.panel:not([hidden]){animation:fadein .3s var(--ease)}}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.path{font-size:12px;color:var(--muted)}
+.lede{font-weight:700;margin:8px 0 26px;max-width:52ch;font-size:16px;line-height:1.45}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 36px}
+.item h3{font-size:15px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+.item h3::before{content:"+ ";color:var(--accent-text)}
+.item p{color:var(--muted);font-size:13.5px}
+
+/* ===== Ferramenta de exemplo ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;align-items:stretch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,3vw,28px);min-width:0}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.fieldset legend{font-size:13px;font-weight:700;padding:0}
+.hint{font-size:12px;color:var(--muted)}
+input[type=text],input[type=email],select,textarea{width:100%;font:400 14px/1.4 var(--ff-mono);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px;transition:border-color .2s}
+input[type=text]:hover,select:hover,textarea:hover{border-color:var(--muted)}
+input[type=text]:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+textarea{resize:vertical;min-height:96px}
+.aff{position:relative}
+.aff .u{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:13px}
+.aff.pre input{padding-left:38px}.aff.pre .u{left:12px}
+.aff.suf input{padding-right:34px}.aff.suf .u{right:12px}
+.result{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.result .lbl{color:var(--muted);font-size:13px}
+.price{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:800;letter-spacing:-.05em;line-height:1.1;margin:4px 0 10px;color:var(--fg)}
+.sub{display:flex;flex-wrap:wrap;gap:6px 26px;color:var(--muted);font-size:13px}
+.sub b{color:var(--fg)}
+.err{color:var(--danger);font-size:13px;font-weight:500}
+.err::before{content:"! "}
+.code{background:var(--term-bg);color:var(--term-fg);border:1px solid var(--term-line);border-radius:var(--r-lg);padding:clamp(18px,3vw,26px);font-size:13px;line-height:1.7;overflow-x:auto;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.code pre{font:inherit;white-space:pre}
+.code .file{color:var(--term-muted);font-size:12px;margin-bottom:12px;display:block}
+.kw{color:var(--term-accent)}.cm{color:var(--term-muted)}.num{font-weight:700}
+.call{border-top:1px solid var(--term-line);padding-top:16px}
+.call pre{white-space:pre-wrap;word-break:break-word}
+
+/* ===== Processo (log) ===== */
+.log{margin-top:34px;background:var(--term-bg);color:var(--term-fg);border:1px solid var(--term-line);border-radius:var(--r-lg);padding:clamp(18px,3vw,28px);font-size:13.5px}
+.log-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--term-muted)}
+.log-head .btn{color:var(--term-fg);border-color:var(--term-line);padding:10px 14px;font-size:13px}
+.log-head .btn:hover{border-color:var(--term-accent)}
+.step{display:grid;grid-template-columns:auto 11ch 1fr;gap:6px 14px;padding:7px 0}
+.step .tag{white-space:pre;color:var(--term-muted)}
+.step[data-state="done"] .tag{color:var(--term-accent);font-weight:700}
+.step[data-state="run"] .tag{color:var(--term-fg)}
+.step b{font-weight:700}
+.step span.d{color:var(--term-muted)}
+.step[data-state="idle"] b,.step[data-state="idle"] span.d{opacity:.55}
+
+/* ===== Tecnologia ===== */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:34px}
+.b{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;font-size:13px;line-height:1.75;min-width:0}
+.b.w{grid-column:span 3}
+.b pre{font:inherit;white-space:pre-wrap;word-break:break-word}
+.b .t-k{color:var(--accent-text);font-weight:700}
+.b .t-h{font-weight:800;font-size:14px}
+.b.tint{background:color-mix(in srgb,var(--accent) 14%,var(--bg));border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.b.ink{background:var(--term-bg);color:var(--term-fg);border-color:var(--term-line)}
+.b.ink .t-k,.b.ink .t-h{color:var(--term-accent)}
+
+/* ===== Briefing ===== */
+.brief{display:grid;grid-template-columns:7fr 5fr;gap:24px;margin-top:36px;align-items:start}
+.form{display:flex;flex-direction:column;gap:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fieldset{border:0;padding:0;margin:0;min-width:0}
+.fieldset legend{margin-bottom:8px}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.opt{position:relative;display:block}
+.opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.opt span{display:flex;gap:8px;align-items:baseline;padding:11px 12px;border:1px solid var(--line);border-radius:var(--r-sm);font-size:13.5px;background:var(--bg);transition:border-color .2s,background-color .2s}
+.opt span::before{content:"[ ]";color:var(--muted);white-space:pre;flex:none}
+.opt.radio span::before{content:"( )"}
+.opt:hover span{border-color:var(--muted)}
+.opt input:checked + span{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--bg))}
+.opt input:checked + span::before{content:"[x]";color:var(--accent-text);font-weight:700}
+.opt.radio input:checked + span::before{content:"(*)"}
+.opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.status{font-size:13px;color:var(--muted);min-height:1.4em}
+.preview{position:sticky;top:88px;background:var(--term-bg);color:var(--term-fg);border:1px solid var(--term-line);border-radius:var(--r-lg);padding:20px;font-size:13px;line-height:1.7;min-width:0}
+.preview .file{color:var(--term-muted);font-size:12px;display:block;margin-bottom:12px}
+.preview pre{font:inherit;white-space:pre-wrap;word-break:break-word}
+.preview .k{color:var(--term-accent)}.preview .dim{color:var(--term-muted)}
+
+/* ===== Dúvidas ===== */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin-top:34px;align-items:start}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);transition:border-color .2s}
+details[open],details:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;display:flex;gap:10px;line-height:1.4}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";color:var(--accent-text);width:1ch;flex:none}
+details[open] summary::before{content:"-"}
+details p{padding:0 18px 18px 40px;color:var(--muted);font-size:13.5px}
+
+/* ===== Preços ===== */
+.pgrid{display:grid;grid-template-columns:7fr 5fr;gap:14px;margin-top:34px;align-items:stretch}
+.card.tint{background:color-mix(in srgb,var(--accent) 14%,var(--bg));border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.card.tint h3{font-size:1.15rem}
+.card.tint p{color:var(--muted);margin-top:10px}
+.card.tint ul{list-style:none;padding:0;margin:16px 0 22px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.card.tint li::before{content:"+ ";color:var(--accent-text);font-weight:700}
+
+/* ===== Rodapé ===== */
+.foot{border-top:1px solid var(--line);padding:44px 0 56px}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.foot p{color:var(--muted);font-size:13px;margin-top:14px;max-width:34ch}
+.foot ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.foot ul a{text-decoration:none;color:var(--fg)}
+.foot ul a:hover{color:var(--accent-text);text-decoration:underline;text-underline-offset:4px}
+.foot .h{font-weight:800;font-size:13px;color:var(--muted);margin-bottom:10px}
+.copy{margin-top:36px;font-size:12px;color:var(--muted)}
+
+/* ===== Entrada do hero (uma sequência só) ===== */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s var(--ease) both;animation-delay:var(--d,0s)}
+  .caret{animation:blink 1.1s steps(1) infinite}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+
+/* ===== Responsivo ===== */
+@media (max-width:980px){
+  .links{display:none}
+  .hero h1{font-size:clamp(1.7rem,7vw,3rem)}
+  .hero-grid,.tool,.brief,.pgrid{grid-template-columns:1fr}
+  .cat{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .bento{grid-template-columns:1fr}
+  .b,.b.w{grid-column:auto}
+  .preview{position:static}
+  .faq{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .items{grid-template-columns:1fr}
+  .fields,.row2,.opts{grid-template-columns:1fr}
+  .step{grid-template-columns:auto 1fr}
+  .step span.d{grid-column:2}
+  .lock .lg{width:34px;height:34px}
+  .lock b{font-size:23px}
+  .lock small{font-size:9px}
+  .btn-sm{font-size:13px;padding:10px 12px}
+  .term-body{height:280px}
+  .term-in input,input[type=text],input[type=email],select,textarea{font-size:16px}
+}
+@media (max-width:460px){.tbtn{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs><path id="v" d="M17 17l15 25 15-25" fill="none" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></defs>
+  <symbol id="mk-i" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0d1224"/><use href="#v" stroke="#f4f0e8"/><circle cx="32" cy="52" r="3.6" fill="#8a5cf5"/></symbol>
+  <symbol id="mk-s" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#f4f0e8"/><use href="#v" stroke="#0d1224"/><circle cx="32" cy="52" r="3.6" fill="#8a5cf5"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Ir para o conteúdo</a>
+
+<header class="top" id="topo">
+  <div class="wrap nav">
+    <a class="lock" href="#topo" aria-label="VSK Dev, início">
+      <svg class="lg lg-l" aria-hidden="true"><use href="#mk-i"/></svg>
+      <svg class="lg lg-d" aria-hidden="true"><use href="#mk-s"/></svg>
+      <span><b>VSK</b><small>DEV</small></span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#processo">Processo</a>
+      <a href="#precos">Preços</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="nav-act">
+      <button class="tbtn" id="themeBtn" type="button">tema</button>
+      <a class="btn btn-primary btn-sm" href="#orcamento">Pedir orçamento</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1 id="h1" class="rise" style="--d:.05s">Sites e ferramentas<br>para empresas<span class="caret" aria-hidden="true">_</span></h1>
+        <p class="lead rise" style="--d:.18s">Criamos sites, sistemas e automações sob medida, do primeiro rascunho ao site no ar.</p>
+        <div class="cta-row rise" style="--d:.28s">
+          <a class="btn btn-primary" href="#orcamento">Pedir orçamento</a>
+          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+        </div>
+        <p class="note rise" style="--d:.36s">O terminal funciona de verdade. Digite um comando ou toque em um atalho.</p>
+      </div>
+      <div class="term rise" id="term" style="--d:.22s">
+        <div class="term-bar">vsk@dev ~/empresa</div>
+        <div class="term-body" id="termOut" role="log" aria-live="polite" aria-label="Saída do terminal" tabindex="0"></div>
+        <form class="term-in" id="termForm" autocomplete="off" novalidate>
+          <label for="termInput">$</label>
+          <input id="termInput" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="Digite um comando">
+        </form>
+        <div class="chips" aria-label="Atalhos de comandos">
+          <button type="button" data-cmd="help">help</button>
+          <button type="button" data-cmd="ls">ls</button>
+          <button type="button" data-cmd="ls sites">ls sites</button>
+          <button type="button" data-cmd="stack">stack</button>
+          <button type="button" data-cmd="tema">tema</button>
+          <button type="button" data-cmd="vsk dev new --site loja">vsk dev new</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section class="sec" id="servicos" aria-labelledby="h-serv">
+  <div class="wrap">
+    <h2 id="h-serv"><span class="ps" aria-hidden="true">$</span>O que a VSK Dev faz</h2>
+    <p class="intro">Escolha uma área para ver o que cabe nela. Se o seu caso não aparece, conte no briefing.</p>
+
+    <div class="cat">
+      <div class="tabs" role="tablist" aria-label="Áreas de serviço" aria-orientation="vertical">
+        <button class="tab" role="tab" id="tab-sites" data-tab="sites" aria-controls="panel-sites" aria-selected="true">Sites</button>
+        <button class="tab" role="tab" id="tab-ferramentas" data-tab="ferramentas" aria-controls="panel-ferramentas" aria-selected="false" tabindex="-1">Ferramentas</button>
+        <button class="tab" role="tab" id="tab-automacao" data-tab="automacao" aria-controls="panel-automacao" aria-selected="false" tabindex="-1">Automação</button>
+        <button class="tab" role="tab" id="tab-manutencao" data-tab="manutencao" aria-controls="panel-manutencao" aria-selected="false" tabindex="-1">Manutenção</button>
+        <button class="tab" role="tab" id="tab-dados-ia" data-tab="dados-ia" aria-controls="panel-dados-ia" aria-selected="false" tabindex="-1">Dados e IA</button>
+      </div>
+
+      <div>
+        <div class="panel" role="tabpanel" id="panel-sites" data-panel="sites" aria-labelledby="tab-sites">
+          <p class="path">~/servicos/sites</p>
+          <p class="lede">Para ser encontrado no Google e passar confiança antes do primeiro contato.</p>
+          <div class="items">
+            <div class="item"><h3>Site institucional</h3><p>Apresenta a empresa, os serviços e os contatos, e abre rápido no celular.</p></div>
+            <div class="item"><h3>Landing page</h3><p>Uma página focada em uma oferta, com formulário e botão de WhatsApp.</p></div>
+            <div class="item"><h3>Loja virtual e catálogo</h3><p>Carrinho com Pix e cartão, ou catálogo com pedido direto pelo WhatsApp.</p></div>
+            <div class="item"><h3>Cardápio digital</h3><p>QR code na mesa, fotos, categorias e pedido para entrega ou retirada.</p></div>
+            <div class="item"><h3>Portfólio e blog</h3><p>Mostra seus trabalhos e publica conteúdo que aparece nas buscas.</p></div>
+            <div class="item"><h3>Redesenho de site</h3><p>Renova o visual e a velocidade de um site que já existe, mantendo o endereço.</p></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-ferramentas" data-panel="ferramentas" aria-labelledby="tab-ferramentas" hidden>
+          <p class="path">~/servicos/ferramentas</p>
+          <p class="lede">Para tirar tarefas do papel, da planilha e do WhatsApp e colocar em um lugar só.</p>
+          <div class="items">
+            <div class="item"><h3>Calculadoras e orçadores</h3><p>O cliente escolhe as opções e recebe o valor na hora, sem esperar resposta.</p></div>
+            <div class="item"><h3>Agendamento online</h3><p>Horários livres, confirmação e lembrete por WhatsApp ou e-mail.</p></div>
+            <div class="item"><h3>Painel de gestão</h3><p>Vendas, estoque, clientes e tarefas em uma tela só.</p></div>
+            <div class="item"><h3>Área do cliente</h3><p>Login, andamento de pedidos, arquivos e segunda via de documentos.</p></div>
+            <div class="item"><h3>Planilha vira sistema</h3><p>Tira a rotina do Excel e leva para um app com cadastro, busca e relatório.</p></div>
+            <div class="item"><h3>Propostas e contratos</h3><p>Preenche o modelo com os dados do cliente e entrega o PDF pronto.</p></div>
+            <div class="item"><h3>Formulários e pesquisas</h3><p>Cadastros, fichas e pesquisas de satisfação com respostas organizadas.</p></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-automacao" data-panel="automacao" aria-labelledby="tab-automacao" hidden>
+          <p class="path">~/servicos/automacao</p>
+          <p class="lede">Para o que alguém da equipe faz à mão, todos os dias, do mesmo jeito.</p>
+          <div class="items">
+            <div class="item"><h3>Avisos e respostas automáticas</h3><p>Confirmação de pedido, lembrete de pagamento e retorno de contato por WhatsApp e e-mail.</p></div>
+            <div class="item"><h3>Integração entre sistemas</h3><p>Os dados passam do site para o ERP, o CRM ou a planilha sem digitar de novo.</p></div>
+            <div class="item"><h3>Relatórios automáticos</h3><p>Resumo de vendas e metas enviado por e-mail no dia e na hora que você definir.</p></div>
+            <div class="item"><h3>Cobrança por Pix</h3><p>Gera o QR code, confere o pagamento e avisa quando cair.</p></div>
+            <div class="item"><h3>Captura de leads</h3><p>O formulário do site cai direto na planilha ou no CRM e avisa a equipe.</p></div>
+            <div class="item"><h3>Robôs para tarefas repetitivas</h3><p>Copiam dados, preenchem cadastros e baixam relatórios no seu lugar.</p></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-dados-ia" data-panel="dados-ia" aria-labelledby="tab-dados-ia" hidden>
+          <p class="path">~/servicos/dados-ia</p>
+          <p class="lede">Para decidir com números confiáveis e atender os clientes sem fila.</p>
+          <div class="items">
+            <div class="item"><h3>Assistente de atendimento</h3><p>Responde as dúvidas mais comuns no site e passa a conversa para a equipe quando precisa.</p></div>
+            <div class="item"><h3>Busca nos documentos</h3><p>Pergunte em linguagem simples e encontre a resposta em manuais, contratos e políticas.</p></div>
+            <div class="item"><h3>Dashboards</h3><p>Gráficos de vendas, custos e metas que se atualizam sozinhos.</p></div>
+            <div class="item"><h3>Limpeza de dados</h3><p>Planilhas bagunçadas viram tabelas organizadas e sem duplicidade.</p></div>
+            <div class="item"><h3>Leitura de documentos</h3><p>Extrai dados de PDFs, notas fiscais e fotos de formulários.</p></div>
+            <div class="item"><h3>Textos e traduções</h3><p>Conteúdo para o site, descrição de produtos e versões em inglês e espanhol.</p></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-manutencao" data-panel="manutencao" aria-labelledby="tab-manutencao" hidden>
+          <p class="path">~/servicos/manutencao</p>
+          <p class="lede">Para o site continuar rápido, seguro e atualizado depois que vai ao ar.</p>
+          <div class="items">
+            <div class="item"><h3>Domínio, hospedagem e e-mail</h3><p>Registro, certificado de segurança e e-mail profissional com o nome da sua empresa.</p></div>
+            <div class="item"><h3>Velocidade e Google</h3><p>Ajustes para o site abrir rápido e ser mais fácil de encontrar nas buscas.</p></div>
+            <div class="item"><h3>Manutenção mensal</h3><p>Alterações no site todo mês, contratadas por no mínimo 12 meses: 1 por R$ 80 ou 2 por R$ 140.</p></div>
+            <div class="item"><h3>Privacidade e cookies</h3><p>Aviso de cookies, política de privacidade e formulários que pedem só o necessário.</p></div>
+            <div class="item"><h3>Treinamento da equipe</h3><p>Você aprende a atualizar o conteúdo sozinho, com um guia curto em vídeo.</p></div>
+            <div class="item"><h3>Conserto de sites com problema</h3><p>Site lento, quebrado ou fora do ar: achamos a causa e corrigimos.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FERRAMENTA DE EXEMPLO ===== -->
+<section class="sec" id="ferramentas" aria-labelledby="h-tool">
+  <div class="wrap">
+    <h2 id="h-tool"><span class="ps" aria-hidden="true">$</span>Uma ferramenta para testar agora</h2>
+    <p class="intro">Esta calculadora de preço de venda é um exemplo. A sua teria os seus produtos, as suas regras e o seu visual.</p>
+
+    <div class="tool">
+      <div class="card">
+        <form id="calc" novalidate>
+          <div class="fields">
+            <div class="field">
+              <label for="c-cost">Custo do produto</label>
+              <div class="aff pre"><span class="u" aria-hidden="true">R$</span><input id="c-cost" type="text" inputmode="decimal" value="42,90"></div>
+            </div>
+            <div class="field">
+              <label for="c-margin">Margem desejada</label>
+              <div class="aff suf"><input id="c-margin" type="text" inputmode="decimal" value="30"><span class="u" aria-hidden="true">%</span></div>
+            </div>
+            <div class="field">
+              <label for="c-tax">Impostos e taxas</label>
+              <div class="aff suf"><input id="c-tax" type="text" inputmode="decimal" value="8"><span class="u" aria-hidden="true">%</span></div>
+            </div>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <div id="calcOk">
+            <div class="lbl">Preço de venda</div>
+            <div class="price" id="r-price">R$ 0,00</div>
+            <div class="sub"><span>Lucro por unidade: <b id="r-profit">R$ 0,00</b></span><span>Impostos e taxas: <b id="r-tax">R$ 0,00</b></span></div>
+          </div>
+          <p class="err" id="calcErr" hidden></p>
+        </div>
+      </div>
+
+      <div class="code">
+        <div>
+          <span class="file">preco.js</span>
+<pre><span class="kw">function</span> precoDeVenda(custo, margem, taxas) {
+  <span class="kw">const</span> parte = <span class="num">1</span> - (margem + taxas) / <span class="num">100</span>;
+  <span class="kw">if</span> (parte &lt;= <span class="num">0</span>) <span class="kw">return</span> <span class="kw">null</span>;
+  <span class="cm">// margem + taxas não podem passar de 100%</span>
+  <span class="kw">return</span> custo / parte;
+}</pre>
+        </div>
+        <div class="call">
+          <span class="file">chamada com os valores ao lado</span>
+          <pre id="callLine">precoDeVenda(42.9, 30, 8)</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESSO ===== -->
+<section class="sec" id="processo" aria-labelledby="h-proc">
+  <div class="wrap">
+    <h2 id="h-proc"><span class="ps" aria-hidden="true">$</span>Como o projeto anda</h2>
+    <p class="intro">Você acompanha cada etapa e aprova antes de passarmos para a próxima.</p>
+
+    <div class="log" id="log">
+      <div class="log-head">
+        <span>$ vsk dev run seu-projeto</span>
+        <button class="btn btn-ghost" id="logAgain" type="button">Rodar de novo</button>
+      </div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>briefing</b><span class="d">conversa para entender o seu negócio e o que você precisa</span></div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>proposta</b><span class="d">escopo, prazo e valor por escrito</span></div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>prototipo</b><span class="d">você vê as telas e aprova antes de construir</span></div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>build</b><span class="d">construção com entregas parciais para você testar</span></div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>deploy</b><span class="d">site ou ferramenta no ar, no seu domínio</span></div>
+      <div class="step" data-state="done"><span class="tag">[ok]</span><b>suporte</b><span class="d">ajustes e manutenção depois da entrega</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREÇOS ===== -->
+<section class="sec" id="precos" aria-labelledby="h-prec">
+  <div class="wrap">
+    <h2 id="h-prec"><span class="ps" aria-hidden="true">$</span>Quanto custa</h2>
+    <p class="intro">Landing page tem preço fechado. O resto sai por orçamento, depois de uma conversa.</p>
+
+    <div class="pgrid">
+      <div class="card">
+        <fieldset class="fieldset">
+          <legend>Landing page com manutenção mensal</legend>
+          <div class="opts" style="grid-template-columns:1fr">
+            <label class="opt radio"><input type="radio" name="plano" value="80" checked><span>R$ 80 por mês: 1 alteração no site por mês</span></label>
+            <label class="opt radio"><input type="radio" name="plano" value="140"><span>R$ 140 por mês: 2 alterações no site por mês</span></label>
+          </div>
+        </fieldset>
+        <div class="result" aria-live="polite">
+          <div class="lbl">Criação da landing page, pagamento único</div>
+          <div class="price">R$ 850</div>
+          <div class="sub"><span>Manutenção: <b id="p-mes">R$ 80,00</b> por mês</span></div>
+          <p class="hint" style="margin-top:12px">A manutenção é obrigatória, com duração mínima de 12 meses, e já inclui o domínio .com.br.</p>
+        </div>
+      </div>
+      <div class="card tint">
+        <h3>Outros projetos</h3>
+        <p>Cada caso é diferente. Você conta o que precisa e recebe uma proposta por escrito.</p>
+        <ul>
+          <li>Sites institucionais e lojas virtuais</li>
+          <li>Ferramentas e sistemas sob medida</li>
+          <li>Automações</li>
+        </ul>
+        <a class="btn btn-primary" href="#orcamento">Pedir orçamento</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECNOLOGIA ===== -->
+<section class="sec" id="tecnologia" aria-labelledby="h-tec">
+  <div class="wrap">
+    <h2 id="h-tec"><span class="ps" aria-hidden="true">$</span>A tecnologia certa para cada caso</h2>
+    <p class="intro">Escolhemos pelo que o projeto precisa. Se uma página simples resolve, não vendemos um sistema.</p>
+
+    <div class="bento">
+      <div class="b w"><pre><span class="t-h">[sites]</span>
+<span class="t-k">base</span>      = ["HTML", "CSS", "JavaScript"]
+<span class="t-k">interface</span> = ["React"]
+<span class="t-k">foco</span>      = "rápido no celular e fácil de achar"</pre></div>
+      <div class="b w"><pre><span class="t-h">[sistemas]</span>
+<span class="t-k">servidor</span> = ["Node.js", "Python"]
+<span class="t-k">dados</span>    = ["PostgreSQL", "SQLite", "Google Sheets"]
+<span class="t-k">acesso</span>   = "login e permissões por pessoa"</pre></div>
+      <div class="b"><pre><span class="t-h">[integracoes]</span>
+<span class="t-k">pagamento</span> = ["Pix"]
+<span class="t-k">mensagens</span> = ["WhatsApp", "e-mail"]
+<span class="t-k">escritorio</span> = ["Google Workspace", "APIs"]</pre></div>
+      <div class="b tint"><pre><span class="t-h">[automacao]</span>
+<span class="t-k">avisos</span>     = "confirmação e lembrete automáticos"
+<span class="t-k">leads</span>      = "do formulário para a planilha"
+<span class="t-k">relatorios</span> = "enviados por e-mail"</pre></div>
+      <div class="b ink"><pre><span class="t-h">[entrega]</span>
+<span class="t-k">dominio</span>     = true
+<span class="t-k">hospedagem</span>  = true
+<span class="t-k">certificado</span> = true
+<span class="t-k">backup</span>      = true</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORÇAMENTO ===== -->
+<section class="sec" id="orcamento" aria-labelledby="h-orc">
+  <div class="wrap">
+    <h2 id="h-orc"><span class="ps" aria-hidden="true">$</span>Conte o que você precisa</h2>
+    <p class="intro">Preencha o briefing. Ele vira uma mensagem pronta para enviar, e a proposta chega por escrito.</p>
+
+    <div class="brief">
+      <form class="form card" id="brief" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="f-nome">Seu nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" aria-describedby="err-nome">
+            <span class="err" id="err-nome" hidden>Informe seu nome.</span>
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+          </div>
+        </div>
+
+        <fieldset class="fieldset" aria-describedby="err-tipo">
+          <legend>O que você quer fazer?</legend>
+          <div class="opts">
+            <label class="opt radio"><input type="radio" name="tipo" value="Site institucional"><span>Site institucional</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="Landing page"><span>Landing page</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="Loja virtual"><span>Loja virtual</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="Ferramenta ou sistema"><span>Ferramenta ou sistema</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="Automação"><span>Automação</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="IA e dados"><span>IA e dados</span></label>
+            <label class="opt radio"><input type="radio" name="tipo" value="Ainda não sei"><span>Ainda não sei</span></label>
+          </div>
+          <span class="err" id="err-tipo" hidden>Escolha uma opção.</span>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Recursos que você imagina</legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="rec" value="Formulário de contato"><span>Formulário de contato</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Botão de WhatsApp"><span>Botão de WhatsApp</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Pagamento por Pix"><span>Pagamento por Pix</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Agendamento online"><span>Agendamento online</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Área com login"><span>Área com login</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Painel de relatórios"><span>Painel de relatórios</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Blog"><span>Blog</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Integração com outro sistema"><span>Integração com outro sistema</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Assistente de IA"><span>Assistente de IA</span></label>
+            <label class="opt"><input type="checkbox" name="rec" value="Versão em inglês"><span>Versão em inglês</span></label>
+          </div>
+        </fieldset>
+
+        <div class="row2">
+          <div class="field">
+            <label for="f-prazo">Prazo desejado</label>
+            <select id="f-prazo" name="prazo">
+              <option>Sem pressa</option>
+              <option>Em até 1 mês</option>
+              <option>Em até 2 semanas</option>
+              <option>Urgente</option>
+            </select>
+          </div>
+          <fieldset class="fieldset">
+            <legend>Você já tem</legend>
+            <div class="opts" style="grid-template-columns:1fr">
+              <label class="opt radio"><input type="radio" name="site" value="Tenho site e domínio"><span>Site e domínio</span></label>
+              <label class="opt radio"><input type="radio" name="site" value="Só tenho domínio"><span>Só o domínio</span></label>
+              <label class="opt radio"><input type="radio" name="site" value="Não tenho nada ainda"><span>Nada ainda</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="f-det">Conte com suas palavras</label>
+          <textarea id="f-det" name="detalhes" aria-describedby="h-det"></textarea>
+          <span class="hint" id="h-det">Exemplo: vendo roupas e quero receber pedidos pelo site.</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit" id="sendBtn">Enviar briefing</button>
+          <button class="btn btn-ghost" type="button" id="copyBtn">Copiar texto</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="preview" aria-label="Prévia do briefing">
+        <span class="file">briefing.md</span>
+        <pre id="previewOut"></pre>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DÚVIDAS ===== -->
+<section class="sec" id="duvidas" aria-labelledby="h-faq">
+  <div class="wrap">
+    <h2 id="h-faq"><span class="ps" aria-hidden="true">$</span>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Quanto custa um site ou uma ferramenta?</summary><p>Landing page: R$ 850 para criar, mais manutenção mensal obrigatória de R$ 80 (1 alteração por mês) ou R$ 140 (2 alterações), por no mínimo 12 meses, com o domínio .com.br incluso. Outros projetos saem por orçamento, com escopo, prazo e valor por escrito.</p></details>
+      <details><summary>Em quanto tempo fica pronto?</summary><p>Uma página simples sai mais rápido. Sistemas com login, pagamento e integrações levam mais tempo. O prazo fica registrado na proposta.</p></details>
+      <details><summary>Preciso ter um domínio?</summary><p>Não. Na landing page, o domínio .com.br já está incluso no valor da manutenção mensal.</p></details>
+      <details><summary>Quem fica com o código e os acessos?</summary><p>Combinamos isso na proposta: o código, as contas e os acessos ficam com quem for definido ali, de forma clara desde o início.</p></details>
+      <details><summary>Vocês cuidam do site depois de pronto?</summary><p>Sim. Na landing page a manutenção é obrigatória, por no mínimo 12 meses, com o domínio .com.br incluso: R$ 80 com 1 alteração por mês, ou R$ 140 com 2 alterações.</p></details>
+      <details><summary>Já tenho um site. Dá para melhorar sem refazer tudo?</summary><p>Dá. Revisamos velocidade, visual e presença no Google, e dizemos o que vale mexer e o que pode ficar como está.</p></details>
+      <details><summary>Como funciona o atendimento?</summary><p>O trabalho pode ser feito todo a distância, por mensagem e videochamada, e você aprova cada etapa antes da seguinte.</p></details>
+      <details><summary>E os dados dos meus clientes?</summary><p>Pedimos só os dados necessários, usamos conexão segura e deixamos configurados os avisos de privacidade e de cookies.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="lock" href="#topo" aria-label="VSK Dev, voltar ao topo">
+          <svg class="lg lg-l" aria-hidden="true"><use href="#mk-i"/></svg>
+          <svg class="lg lg-d" aria-hidden="true"><use href="#mk-s"/></svg>
+          <span><b>VSK</b><small>DEV</small></span>
+        </a>
+        <p>Sites e ferramentas para empresas.</p>
+      </div>
+      <div>
+        <div class="h">Neste site</div>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#precos">Preços</a></li>
+          <li><a href="#orcamento">Pedir orçamento</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="h">Contato</div>
+        <ul>
+          <li><a href="https://wa.me/5546999711954" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:dev@vskgroup.com.br">dev@vskgroup.com.br</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="h">Grupo VSK</div>
+        <ul>
+          <li><a href="https://vskgroup.com.br" target="_blank" rel="noopener">VSK Group</a></li>
+          <li><a href="https://store.vskgroup.com.br" target="_blank" rel="noopener">Store</a></li>
+          <li><a href="https://agencia.vskgroup.com.br" target="_blank" rel="noopener">Agência</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">dev.vskgroup.com.br - 2026 VSK Group</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ===== Configuração de contato: ajuste aqui ===== */
+var CONTACT = {
+  whatsapp: "5546999711954",           /* só números, com DDI e DDD. Ex.: 5546999999999 */
+  email: "dev@vskgroup.com.br"
+};
+
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s, r){ return (r||document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+var sleep = function(ms){ return new Promise(function(r){ setTimeout(r, ms); }); };
+var root = document.documentElement;
+
+/* ===== Tema ===== */
+function currentTheme(){
+  return root.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+}
+function paintThemeBtn(){
+  var next = currentTheme() === 'dark' ? 'claro' : 'escuro';
+  var b = $('#themeBtn');
+  b.textContent = next;
+  b.setAttribute('aria-label', 'Mudar para o tema ' + next);
+}
+function setTheme(t){
+  root.dataset.theme = t;
+  try { localStorage.setItem('vsk-dev-theme', t); } catch(e){}
+  paintThemeBtn();
+}
+try { var saved = localStorage.getItem('vsk-dev-theme'); if (saved === 'light' || saved === 'dark') root.dataset.theme = saved; } catch(e){}
+paintThemeBtn();
+$('#themeBtn').addEventListener('click', function(){ setTheme(currentTheme() === 'dark' ? 'light' : 'dark'); });
+
+/* ===== Navegação auxiliar ===== */
+function go(id){
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+}
+
+/* ===== Abas do catálogo ===== */
+var tabs = $$('[role=tab]');
+var panels = $$('[role=tabpanel]');
+var SLUGS = tabs.map(function(t){ return t.dataset.tab; });
+function selectTab(id, focus){
+  tabs.forEach(function(t){
+    var on = t.dataset.tab === id;
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+    t.tabIndex = on ? 0 : -1;
+    if (on && focus) t.focus();
+  });
+  panels.forEach(function(p){ p.hidden = p.dataset.panel !== id; });
+}
+tabs.forEach(function(t, i){
+  t.addEventListener('click', function(){ selectTab(t.dataset.tab, false); });
+  t.addEventListener('keydown', function(e){
+    var k = e.key, n = null;
+    if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabs.length;
+    else if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+    else if (k === 'Home') n = 0;
+    else if (k === 'End') n = tabs.length - 1;
+    if (n !== null){ e.preventDefault(); selectTab(tabs[n].dataset.tab, true); }
+  });
+});
+
+/* ===== Terminal ===== */
+var term = $('#term'), out = $('#termOut'), input = $('#termInput'), form = $('#termForm');
+var hist = [], hi = 0, busy = false, introRunning = true, introCancelled = false;
+
+function scrollOut(){ out.scrollTop = out.scrollHeight; }
+function print(html, cls){
+  var d = document.createElement('div');
+  d.className = cls || 'out';
+  d.innerHTML = html;
+  out.appendChild(d);
+  scrollOut();
+}
+function printCmd(text){
+  var d = document.createElement('div');
+  d.className = 'cmd';
+  d.textContent = text;
+  out.appendChild(d);
+  scrollOut();
+}
+function itemsOf(slug){
+  return $$('.item h3', document.getElementById('panel-' + slug)).map(function(h){ return h.textContent; });
+}
+var ALIAS = { dados: 'dados-ia', ia: 'dados-ia', 'dados-e-ia': 'dados-ia', cuidado: 'manutencao', site: 'sites', ferramenta: 'ferramentas' };
+
+var C = {
+  help: function(){
+    print('comandos:\n' +
+      '  ls [pasta]   serviços por área\n' +
+      '  ferramentas  testar a calculadora\n' +
+      '  processo     como o projeto anda\n' +
+      '  precos       valores\n' +
+      '  stack        tecnologias\n' +
+      '  orcamento    montar o briefing\n' +
+      '  sobre        quem somos\n' +
+      '  contato      falar com a gente\n' +
+      '  tema         alternar claro/escuro\n' +
+      '  clear        limpar a tela');
+  },
+  ls: function(args){
+    var arg = (args[0] || '').toLowerCase().replace(/\/$/, '');
+    if (!arg){
+      print('<b>pastas:</b>\n  ' + SLUGS.map(function(s){ return s + '/'; }).join('\n  ') + '\n\nexemplo: <span class="ok">ls sites</span>');
+      go('servicos');
+      return;
+    }
+    arg = ALIAS[arg] || arg;
+    if (SLUGS.indexOf(arg) === -1){
+      print('pasta não encontrada: ' + esc(arg) + '\nDigite <b>ls</b> para ver as pastas.');
+      return;
+    }
+    print('<b>' + arg + '/</b>\n' + itemsOf(arg).map(function(n){ return '  + ' + esc(n); }).join('\n'));
+    selectTab(arg, false);
+    go('servicos');
+  },
+  ferramentas: function(){ print('abrindo a calculadora de exemplo...'); go('ferramentas'); },
+  processo: function(){ print('briefing > proposta > prototipo > build > deploy > suporte'); go('processo'); },
+  precos: function(){ print('landing page: R$ 850 + manutenção\n  R$ 80/mês (1 alteração) ou\n  R$ 140/mês (2 alterações)\nmanutenção obrigatória, mínimo de\n12 meses, domínio .com.br incluso\noutros projetos: sob orçamento'); go('precos'); },
+  stack: function(){ print('sites: HTML, CSS, JavaScript, React\nsistemas: Node.js, Python, PostgreSQL\nintegrações: Pix, WhatsApp, e-mail, APIs\n\nvendo o quadro completo...'); go('tecnologia'); },
+  orcamento: function(){
+    print('abrindo o briefing...');
+    go('orcamento');
+    setTimeout(function(){ var n = $('#f-nome'); if (n) n.focus({ preventScroll: true }); }, reduce ? 0 : 700);
+  },
+  sobre: function(){ print('A VSK Dev é o setor de sites e ferramentas do VSK Group.\nCuidamos de tudo: conversa inicial, projeto, entrega e manutenção.'); },
+  contato: function(){
+    var l = '';
+    if (CONTACT.whatsapp) l += 'whatsapp: <a href="https://wa.me/' + esc(CONTACT.whatsapp) + '" target="_blank" rel="noopener">abrir conversa</a>\n';
+    l += 'e-mail: <a href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a>';
+    print(l + '\n\nou monte o briefing: <span class="ok">orcamento</span>');
+  },
+  tema: function(args){
+    var a = (args[0] || '').toLowerCase();
+    var t = a === 'claro' ? 'light' : a === 'escuro' ? 'dark' : (currentTheme() === 'dark' ? 'light' : 'dark');
+    setTheme(t);
+    print('tema ' + (t === 'dark' ? 'escuro' : 'claro') + ' ativado.');
+  },
+  clear: function(){ out.innerHTML = ''; }
+};
+C.servicos = function(){ C.ls([]); };
+C.whoami = C.sobre;
+C.cls = C.clear;
+var NAMES = Object.keys(C);
+
+async function build(args){
+  var i = args.indexOf('--site');
+  var nome = (i > -1 && args[i + 1]) ? args[i + 1] : 'empresa';
+  var steps = [
+    'criando estrutura de "' + esc(nome) + '"',
+    'aplicando a identidade VSK Dev',
+    '<span class="ok">build ok em 1.2s</span>'
+  ];
+  for (var k = 0; k < steps.length; k++){
+    print('> ' + steps[k]);
+    if (!reduce) await sleep(380);
+  }
+  print('quer algo assim? digite <span class="ok">orcamento</span>.');
+}
+
+async function run(raw){
+  var line = String(raw).trim();
+  if (!line || busy) return;
+  busy = true;
+  try {
+    printCmd(line);
+    hist.push(line); hi = hist.length;
+    var parts = line.split(/\s+/);
+    if ((parts[0] || '').toLowerCase() === 'vsk') parts.shift();
+    var name = (parts[0] || '').toLowerCase();
+    var args = parts.slice(1);
+    if (name === 'dev' && args[0] === 'new') await build(args.slice(1));
+    else if (C[name]) await C[name](args);
+    else print('comando não encontrado: ' + esc(name) + '\nDigite <b>help</b> para ver os comandos.');
+  } finally { busy = false; }
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var v = input.value;
+  input.value = '';
+  run(v);
+});
+input.addEventListener('keydown', function(e){
+  if (e.key === 'ArrowUp'){
+    if (hist.length){ e.preventDefault(); hi = Math.max(0, hi - 1); input.value = hist[hi] || ''; }
+  } else if (e.key === 'ArrowDown'){
+    if (hist.length){ e.preventDefault(); hi = Math.min(hist.length, hi + 1); input.value = hist[hi] || ''; }
+  } else if (e.key === 'Tab' && input.value.trim()){
+    var v = input.value.trim().toLowerCase();
+    var m = NAMES.filter(function(n){ return n.indexOf(v) === 0; });
+    if (m.length){ e.preventDefault(); input.value = m[0]; }
+  }
+});
+$$('.chips button').forEach(function(b){
+  b.addEventListener('click', function(){ run(b.dataset.cmd); });
+});
+['pointerdown', 'keydown'].forEach(function(ev){
+  term.addEventListener(ev, function(){ if (introRunning) introCancelled = true; });
+});
+
+async function intro(){
+  var text = 'vsk dev new --site empresa';
+  if (reduce){ input.value = text; }
+  else {
+    for (var i = 1; i <= text.length; i++){
+      if (introCancelled){ input.value = ''; introRunning = false; return; }
+      input.value = text.slice(0, i);
+      await sleep(38);
+    }
+    await sleep(260);
+  }
+  if (introCancelled){ input.value = ''; introRunning = false; return; }
+  input.value = '';
+  introRunning = false;
+  await run(text);
+  print('digite <b>help</b> ou use um atalho abaixo.');
+}
+setTimeout(intro, reduce ? 0 : 700);
+
+/* ===== Calculadora de exemplo ===== */
+var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+function num(v){
+  v = String(v).trim();
+  if (v.indexOf(',') > -1) v = v.replace(/\./g, '').replace(',', '.');
+  var n = parseFloat(v);
+  return isFinite(n) ? n : NaN;
+}
+function precoDeVenda(custo, margem, taxas){
+  var parte = 1 - (margem + taxas) / 100;
+  if (parte <= 0) return null;
+  return custo / parte;
+}
+var cc = $('#c-cost'), cm = $('#c-margin'), ct = $('#c-tax');
+function calc(){
+  var c = num(cc.value), m = num(cm.value), t = num(ct.value);
+  var ok = $('#calcOk'), err = $('#calcErr');
+  var bad = [c, m, t].some(function(x){ return isNaN(x) || x < 0; });
+  var msg = '';
+  var p = null;
+  if (bad) msg = 'Preencha os três campos com números positivos.';
+  else { p = precoDeVenda(c, m, t); if (p === null) msg = 'Margem e taxas somam 100% ou mais. Reduza um dos valores.'; }
+  if (msg){
+    ok.hidden = true; err.hidden = false; err.textContent = msg;
+    $('#callLine').textContent = 'precoDeVenda(' + (bad ? '?' : c + ', ' + m + ', ' + t) + ')\n// ' + (bad ? 'valores inválidos' : 'retorna null');
+    return;
+  }
+  ok.hidden = false; err.hidden = true;
+  $('#r-price').textContent = brl.format(p);
+  $('#r-profit').textContent = brl.format(p * m / 100);
+  $('#r-tax').textContent = brl.format(p * t / 100);
+  $('#callLine').textContent = 'precoDeVenda(' + c + ', ' + m + ', ' + t + ')\n// ' + brl.format(p);
+}
+[cc, cm, ct].forEach(function(i){ i.addEventListener('input', calc); });
+$('#calc').addEventListener('submit', function(e){ e.preventDefault(); });
+calc();
+
+/* ===== Plano de manutenção ===== */
+function plano(){
+  var el = $('input[name=plano]:checked');
+  var m = el ? Number(el.value) : 80;
+  $('#p-mes').textContent = brl.format(m);
+}
+$$('input[name=plano]').forEach(function(i){ i.addEventListener('change', plano); });
+plano();
+
+/* ===== Processo: o log roda ao entrar na tela ===== */
+var steps = $$('.step');
+var running = false;
+function setStep(el, st){
+  el.dataset.state = st;
+  el.querySelector('.tag').textContent = st === 'done' ? '[ok]' : st === 'run' ? '[..]' : '[  ]';
+}
+async function runPipe(){
+  if (running) return;
+  running = true;
+  $('#logAgain').disabled = true;
+  steps.forEach(function(s){ setStep(s, 'idle'); });
+  for (var i = 0; i < steps.length; i++){
+    setStep(steps[i], 'run');
+    if (!reduce) await sleep(520);
+    setStep(steps[i], 'done');
+  }
+  running = false;
+  $('#logAgain').disabled = false;
+}
+$('#logAgain').addEventListener('click', runPipe);
+if (reduce || !('IntersectionObserver' in window)){
+  /* mantém tudo concluído */
+} else {
+  steps.forEach(function(s){ setStep(s, 'idle'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ io.disconnect(); runPipe(); }
+    });
+  }, { threshold: 0.35 });
+  io.observe($('#log'));
+}
+
+/* ===== Briefing ===== */
+var bf = $('#brief');
+function getState(){
+  var d = new FormData(bf);
+  return {
+    nome: (d.get('nome') || '').trim(),
+    empresa: (d.get('empresa') || '').trim(),
+    tipo: d.get('tipo') || '',
+    recursos: d.getAll('rec'),
+    prazo: d.get('prazo') || '',
+    site: d.get('site') || '',
+    detalhes: (d.get('detalhes') || '').trim()
+  };
+}
+function val(v){ return v ? esc(v) : '<span class="dim">(vazio)</span>'; }
+function renderPreview(){
+  var s = getState();
+  var rec = s.recursos.length ? '\n' + s.recursos.map(function(r){ return '  - ' + esc(r); }).join('\n') : ' <span class="dim">(nenhum)</span>';
+  var det = s.detalhes ? esc(s.detalhes).replace(/\n/g, '\n  ') : '<span class="dim">(vazio)</span>';
+  $('#previewOut').innerHTML =
+    '<span class="dim"># briefing</span>\n' +
+    '<span class="k">nome</span>: ' + val(s.nome) + '\n' +
+    '<span class="k">empresa</span>: ' + val(s.empresa) + '\n' +
+    '<span class="k">projeto</span>: ' + val(s.tipo) + '\n' +
+    '<span class="k">recursos</span>:' + rec + '\n' +
+    '<span class="k">prazo</span>: ' + val(s.prazo) + '\n' +
+    '<span class="k">ja_tem</span>: ' + val(s.site) + '\n' +
+    '<span class="k">detalhes</span>: ' + det;
+}
+function buildMessage(s){
+  return 'Olá! Vim pelo site da VSK Dev e quero pedir um orçamento.\n\n' +
+    'Nome: ' + (s.nome || '-') + '\n' +
+    'Empresa: ' + (s.empresa || '-') + '\n' +
+    'Projeto: ' + (s.tipo || '-') + '\n' +
+    'Recursos: ' + (s.recursos.length ? s.recursos.join(', ') : '-') + '\n' +
+    'Prazo: ' + (s.prazo || '-') + '\n' +
+    'Já tenho: ' + (s.site || '-') + '\n' +
+    'Detalhes: ' + (s.detalhes || '-');
+}
+function validate(){
+  var s = getState();
+  var nome = $('#f-nome'), en = $('#err-nome'), et = $('#err-tipo');
+  var okN = !!s.nome, okT = !!s.tipo;
+  en.hidden = okN; nome.setAttribute('aria-invalid', okN ? 'false' : 'true');
+  et.hidden = okT;
+  if (!okN){ nome.focus(); }
+  else if (!okT){ var r = $('input[name=tipo]'); if (r) r.focus(); }
+  return okN && okT;
+}
+async function copyText(t){
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch(e){
+    var ta = document.createElement('textarea');
+    ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(_){}
+    ta.remove();
+    return ok;
+  }
+}
+var status = $('#status');
+if (CONTACT.whatsapp) $('#sendBtn').textContent = 'Enviar pelo WhatsApp';
+bf.addEventListener('input', renderPreview);
+bf.addEventListener('change', renderPreview);
+bf.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!validate()){ status.textContent = 'Faltam dados para enviar. Veja os avisos acima.'; return; }
+  var s = getState(), msg = buildMessage(s), url;
+  if (CONTACT.whatsapp){
+    url = 'https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(msg);
+    var w = window.open(url, '_blank', 'noopener');
+    status.textContent = w ? 'Conversa aberta no WhatsApp. Era só tocar em enviar.' : 'O navegador bloqueou a janela. Use "Copiar texto" e envie pelo WhatsApp.';
+  } else {
+    url = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent('Orçamento: ' + s.tipo) + '&body=' + encodeURIComponent(msg);
+    window.location.href = url;
+    status.textContent = 'Se o seu e-mail não abriu, use "Copiar texto" e envie para ' + CONTACT.email + '.';
+  }
+});
+$('#copyBtn').addEventListener('click', async function(){
+  if (!validate()){ status.textContent = 'Informe seu nome e o tipo de projeto antes de copiar.'; return; }
+  var ok = await copyText(buildMessage(getState()));
+  status.textContent = ok ? 'Texto copiado. Cole na conversa com a gente.' : 'Não foi possível copiar. Selecione o texto da prévia e copie manualmente.';
+});
+renderPreview();
+
+})();
+</script>
+</body>
+</html>
